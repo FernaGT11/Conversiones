@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversiones de Unidades Físicas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-line">
+        <span>LICEO DOMINGO ORTIZ DE ROZAS</span>
+        <span>Profesor: Fernando Gaete Toledo (Ciencias Físicas)</span>
+        <span>
+            Contacto:
+            <a href="mailto:fernando.gaete@liceobicentenariocoelemu.cl">
+                fernando.gaete@liceobicentenariocoelemu.cl
+            </a>
+        </span>
+    </div>
+</header>
+
+<main>
+    <section>
+        <h1>Conversiones de Unidades Físicas</h1>
+        <p class="intro">
+            Apunte de estudio basado en el Sistema Internacional de Unidades (SI),
+            con tablas de referencia y calculadoras interactivas.
+        </p>
+    </section>
+
+    <section>
+        <h2>1. Sistema Internacional de Unidades (SI)</h2>
+        <table>
+            <tr><th>Magnitud</th><th>Unidad</th><th>Símbolo</th></tr>
+            <tr><td>Longitud</td><td>metro</td><td>m</td></tr>
+            <tr><td>Masa</td><td>kilogramo</td><td>kg</td></tr>
+            <tr><td>Tiempo</td><td>segundo</td><td>s</td></tr>
+            <tr><td>Temperatura</td><td>kelvin</td><td>K</td></tr>
+            <tr><td>Corriente eléctrica</td><td>ampere</td><td>A</td></tr>
+            <tr><td>Cantidad de sustancia</td><td>mol</td><td>mol</td></tr>
+            <tr><td>Intensidad luminosa</td><td>candela</td><td>cd</td></tr>
+        </table>
+    </section>
+
+    <section class="calculator">
+        <h2>Calculadora – Sistema Métrico (SI)</h2>
+
+        <div class="calc-grid">
+            <input type="number" id="metricValue" placeholder="Valor">
+            <select id="metricFrom">
+                <option value="km">kilómetros</option>
+                <option value="m">metros</option>
+                <option value="cm">centímetros</option>
+            </select>
+            <select id="metricTo">
+                <option value="m">metros</option>
+                <option value="km">kilómetros</option>
+                <option value="cm">centímetros</option>
+            </select>
+            <button onclick="convertMetric()">Convertir</button>
+        </div>
+
+        <p class="result" id="metricResult"></p>
+    </section>
+
+    <section class="calculator">
+        <h2>Calculadora – Sistema Imperial ↔ Métrico</h2>
+
+        <div class="calc-grid">
+            <input type="number" id="impValue" placeholder="Valor">
+            <select id="impFrom">
+                <option value="inch">pulgadas</option>
+                <option value="ft">pies</option>
+                <option value="lb">libras</option>
+            </select>
+            <select id="impTo">
+                <option value="cm">centímetros</option>
+                <option value="m">metros</option>
+                <option value="kg">kilogramos</option>
+            </select>
+            <button onclick="convertImperial()">Convertir</button>
+        </div>
+
+        <p class="result" id="impResult"></p>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
