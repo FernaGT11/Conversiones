@@ -8,6 +8,23 @@ const formatter = new Intl.NumberFormat("fr-FR", {
 //    maximumFractionDigits: 6
 //});
 
+function formatSI(number, decimals = 6) {
+    // Redondea y separa parte entera y decimal
+    let fixed = number.toFixed(decimals);
+    let parts = fixed.split('.');
+
+    let intPart = parts[0];
+    let decPart = parts[1];
+
+    // Espacio cada 3 cifras a la izquierda
+    intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
+    // Espacio cada 3 cifras a la derecha
+    decPart = decPart.replace(/(\d{3})(?=\d)/g, '$1 ');
+
+    return `${intPart},${decPart}`;
+}
+
 function convertMetric() {
     const value = parseFloat(document.getElementById("metricValue").value);
     const from = document.getElementById("metricFrom").value;
