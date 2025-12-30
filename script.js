@@ -1,8 +1,12 @@
 // Formateador numérico según norma SI (coma decimal y espacio para miles)
-const formatter = new Intl.NumberFormat("es-ES", {
-    minimumFractionDigits: 0,
+const formatter = new Intl.NumberFormat("fr-FR", {
     maximumFractionDigits: 6
 });
+
+//const formatter = new Intl.NumberFormat("es-ES", {
+//    minimumFractionDigits: 0,
+//    maximumFractionDigits: 6
+//});
 
 function convertMetric() {
     const value = parseFloat(document.getElementById("metricValue").value);
@@ -11,7 +15,7 @@ function convertMetric() {
 
     if (isNaN(value)) {
         document.getElementById("metricResult").innerText =
-        "Ingrese un valor válido";
+            "Ingrese un valor válido";
         return;
     }
 
@@ -24,7 +28,7 @@ function convertMetric() {
     const result = value * factors[from] / factors[to];
 
     document.getElementById("metricResult").innerText =
-    `Resultado: ${formatter.format(result)} ${to}`;
+        `Resultado: ${formatter.format(result)} [${to}]`;
 }
 
 function convertImperial() {
@@ -34,8 +38,8 @@ function convertImperial() {
 
     if (isNaN(value)) {
         document.getElementById("impResult").innerText =
-        "Ingrese un valor válido";
-    return;
+            "Ingrese un valor válido";
+        return;
     }
 
     let result = null;
@@ -45,7 +49,7 @@ function convertImperial() {
     if (from === "lb" && to === "kg") result = value * 0.453592;
 
     document.getElementById("impResult").innerText =
-    result !== null
-    ? `Resultado: ${formatter.format(result)} ${to}`
-    : "Conversión no válida";
+        result !== null
+            ? `Resultado: ${formatter.format(result)} [${to}]`
+            : "Conversión no válida";
 }
